@@ -1,6 +1,6 @@
 {
     "name": "@chisel-ui/inline-cluster",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "chisel-ui inline cluster layout primitive",
     "private": false,
     "type": "module",
@@ -9,8 +9,8 @@
         "./astro": "./src/InlineCluster.astro"
     },
     "files": [
-        "src/InlineCluster.astro",
-        "dist/InlineCluster.css"
+        "src",
+        "dist"
     ],
     "scripts": {
         "build": "tsup src/InlineCluster.css --clean",
