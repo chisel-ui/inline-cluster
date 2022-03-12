@@ -10,11 +10,24 @@ export interface InlineClusterProps {
     as?: string
 }
 
+const justifyMap = {
+    start: 'flex-start',
+    end: 'flex-end',
+    center: 'center'
+}
+
+const alignMap = {
+    ...justifyMap,
+    stretch: 'stretch'
+}
+
 const { justify = 'start', align = 'start', gutter = '0px', theme = {}, as: Tag = 'div' } = Astro.props as InlineClusterProps
 
 const maybeGutter = getSafeGutter(theme, gutter)
+const maybeJustify = justifyMap[justify] || justifyMap.start
+const maybeAlign = alignMap[align] || alignMap.start
 ---
 
-<Tag data-chisel-inline-cluster style={`--gutter: ${maybeGutter}; --justify: ${justify}; --align: ${align};`}>
+<Tag data-chisel-inline-cluster style={`--gutter: ${maybeGutter}; --justify: ${maybeJustify}; --align: ${maybeAlign};`}>
     <slot />
 </Tag>
