@@ -1,0 +1,20 @@
+---
+import { Gutter, getSafeGutter, BaseTheme } from '@chisel-ui/core'
+import './InlineCluster.css'
+
+export interface InlineClusterProps {
+    justify?: 'start' | 'end' | 'center'
+    align?: 'start' | 'end' | 'center' | 'stretch'
+    gutter?: Gutter
+    theme?: BaseTheme
+    as?: string
+}
+
+const { justify = 'start', align = 'start', gutter = '0px', theme = {}, as: Tag = 'div' } = Astro.props as InlineClusterProps
+
+const maybeGutter = getSafeGutter(theme, gutter)
+---
+
+<Tag data-chisel-inline-cluster style={`--gutter: ${maybeGutter}; --justify: ${justify}; --align: ${align};`}>
+    <slot />
+</Tag>
