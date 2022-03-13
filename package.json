@@ -1,6 +1,6 @@
 {
     "name": "@chisel-ui/inline-cluster",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "chisel-ui inline cluster layout primitive",
     "private": false,
     "type": "module",

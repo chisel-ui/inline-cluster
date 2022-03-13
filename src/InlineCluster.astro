@@ -19,7 +19,7 @@ const alignMap = {
     stretch: 'stretch'
 }
 
-const { justify = 'start', align = 'start', gutter = '0px', theme = {}, as: Tag = 'div', style, ...props } = Astro.props as InlineClusterProps
+const { justify = 'start', align = 'start', gutter = '0px', theme = {}, as: Tag = 'div', style = '', ...props } = Astro.props as InlineClusterProps
 
 const maybeGutter = getSafeGutter(theme, gutter)
 const maybeJustify = justifyMap[justify] || justifyMap.start
