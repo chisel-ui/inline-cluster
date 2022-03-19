@@ -1,26 +1,18 @@
 {
     "name": "@chisel-ui/inline-cluster",
-    "version": "0.0.6",
+    "version": "0.1.0",
     "description": "chisel-ui inline cluster layout primitive",
     "private": false,
     "type": "module",
-    "exports": {
-        "./css": "./dist/InlineCluster.css",
-        "./astro": "./src/InlineCluster.astro"
-    },
     "files": [
-        "src",
-        "dist"
+        "InlineCluster.astro"
     ],
     "scripts": {
-        "build": "tsup src/InlineCluster.css --clean",
-        "watch": "npm run build -- --watch src",
-        "prepublishOnly": "npm run build"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/chisel-ui/inline-cluster.git"
-    },
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"**/*": "prettier --write --ignore-unknown"
+	},
     "keywords": [
         "astro",
         "inline-cluster",
@@ -33,13 +25,12 @@
     },
     "homepage": "https://github.com/chisel-ui/inline-cluster#readme",
     "devDependencies": {
-        "@chisel-ui/core": "^0.0.5",
-        "autoprefixer": "^10.4.2",
-        "postcss": "^8.4.8",
-        "tsup": "^5.12.1",
-        "typescript": "^4.6.2"
-    },
-    "peerDependencies": {
-        "astro": "^0.24.0"
-    }
+		"husky": "^7.0.4",
+		"lint-staged": "^12.3.7",
+		"prettier": "^2.6.0",
+		"prettier-plugin-astro": "^0.0.12"
+	},
+	"peerDependencies": {
+		"@chisel-ui/core": "^0.1.2"
+	}
 }
